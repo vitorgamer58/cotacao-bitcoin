@@ -9,7 +9,7 @@ Fonte da cotação: *API do Bitvalor.com*
 
 Maiores informações nos comentários do código.
 
-**Troubleshooting**
+# Troubleshooting
 
 Em caso de erro: locale.Error: unsupported locale setting
 
