@@ -1,26 +1,29 @@
-#!/usr/bin/env python3
+import requests
+import locale
+#definir locale para Brasil para formato de moeda
+locale.setlocale(locale.LC_MONETARY, 'Portuguese_Brazil.1252')
+#baixando os dados da pagina
+braziliex = requests.get("https://braziliex.com/api/v1/public/ticker/btc_brl") 
+#parseando os valores JSON para o objeto "data"
+databrlz = braziliex.json()
+pricebrlz = databrlz['last']
+pricebrlz = float(pricebrlz)
+volumebraziliex = databrlz['baseVolume']
+volumebraziliex = float(volumebraziliex)
+variavelbraziliex = (pricebrlz*volumebraziliex)
+page = requests.get("https://braziliex.com/api/v1/public/ticker/btc_brl")
 
-def cotacao():
-    import requests
-    import locale
+bitcointrade = requests.get("https://api.bitcointrade.com.br/v1/public/BTC/ticker")
+databitcointrade = bitcointrade.json()
+pricebitcointrade = databitcointrade['data']['last']
+volumebitcointrade = databitcointrade['data']['volume']
+pricebitcointrade = float(pricebitcointrade)
+volumebitcointrade = float(volumebitcointrade)
+variavelbitcointrade = pricebitcointrade*volumebitcointrade
 
-    #definir locale para Brasil para formato de moeda
-    locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
+pesos = volumebraziliex+volumebitcointrade
+precoponderado = (variavelbraziliex+variavelbitcointrade)/pesos #Media Ponderada
 
-    #url da API Json do site Bitvalor
-    url = "https://api.bitvalor.com/v1/ticker.json"
-
-    #baixando os dados da página
-    page = requests.get(url)
-
-    #parseando os valores JSON para o objeto "data"
-    data = page.json()
-
-    price = data['ticker_24h']['exchanges']['MBT']['last']
-    
-    #formatando o preco para BRL
-    price = locale.currency( price, grouping=True )
-
-    return price
-
-print(cotacao())
+print pricebrlz
+print pricebitcointrade
+print precoponderado
