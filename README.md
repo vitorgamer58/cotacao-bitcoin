@@ -9,12 +9,20 @@ Fonte das cotações: *API das exchanges*
 
 Exchanges utilizadas
 Braziliex
+
 Bitcointrade
+
 Walltime
+
 NegocieCoins
+
 BitcoinToYou
+
 MercadoBitcoin
 
+FlowBTC
+
+![](https://raw.githubusercontent.com/vitorgamer58/cotacao-bitcoin/master/running.png)
 
 Maiores informações nos comentários do código.
 
@@ -27,6 +35,5 @@ Em Debian e derivados abra um terminal e digite:
 **$ sudo dpkg-reconfigure locales **
 
 Marque o locale desejado, neste caso pt_BR.UTF-8 e confirme. 
-ou no windows, Portuguese_Brazil.1252
 
 Aos usuários de outras distros, pesquisem sobre como gerar locales no sistema. 
