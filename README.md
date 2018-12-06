@@ -1,11 +1,20 @@
 # cotacao-bitcoin
-Cotação do Bitcoin via MercadoBitcoin
+Cotação média do Bitcoin
 
-Python script que imprime a cotação do bitcoin. Pode ser facilmente adaptado para sua aplicação, bastando para isso copiar a função cotacao().
+Python script que imprime a cotação média do bitcoin. 
 
 Utiliza as bibliotecas requests e locale. 
 
-Fonte da cotação: *API do Bitvalor.com*
+Fonte das cotações: *API das exchanges*
+
+Exchanges utilizadas
+Braziliex
+Bitcointrade
+Walltime
+NegocieCoins
+BitcoinToYou
+MercadoBitcoin
+
 
 Maiores informações nos comentários do código.
 
@@ -18,5 +27,6 @@ Em Debian e derivados abra um terminal e digite:
 **$ sudo dpkg-reconfigure locales **
 
 Marque o locale desejado, neste caso pt_BR.UTF-8 e confirme. 
+ou no windows, Portuguese_Brazil.1252
 
 Aos usuários de outras distros, pesquisem sobre como gerar locales no sistema. 
