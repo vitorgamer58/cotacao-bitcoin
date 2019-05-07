@@ -8,6 +8,7 @@ Utiliza as bibliotecas requests e locale.
 Fonte das cotações: *API das exchanges*
 
 Exchanges utilizadas
+```
 Braziliex
 
 Bitcointrade
@@ -21,7 +22,7 @@ BitcoinToYou
 MercadoBitcoin
 
 FlowBTC
-
+```
 ![](https://raw.githubusercontent.com/vitorgamer58/cotacao-bitcoin/master/running.png)
 
 Maiores informações nos comentários do código.
